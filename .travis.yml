@@ -1,2 +1,4 @@
 language: csharp
 solution: Creatures.sln
+script:
+ - dotnet test
