@@ -1,5 +1,5 @@
 language: csharp
 solution: Creatures.sln
-dotnet: 2.1.4
+dotnet: 4.6.1
 script:
  - dotnet test
