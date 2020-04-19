@@ -1,5 +1,7 @@
 language: csharp
+mono: none
+dotnet: 3
 solution: Creatures.sln
-dotnet: 4.6.1
 script:
- - dotnet test
+  - dotnet restore
+  - dotnet test
