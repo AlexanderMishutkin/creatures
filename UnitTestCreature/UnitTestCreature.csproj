@@ -90,7 +90,7 @@
 
     <!--Run MSTest.exe-->
 
-    <Exec Command="$(VS90COMNTOOLS)..\IDE\mstest.exe /testcontainer:TestDLL.dll" >
+    <Exec Command="$(VS90COMNTOOLS)..\IDE\mstest.exe /testcontainer:UnitTestCreature.dll" >
 
       <Output TaskParameter="ExitCode" PropertyName="TestSuccessOrNot"/>
 
