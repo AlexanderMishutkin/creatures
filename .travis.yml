@@ -5,4 +5,4 @@ mono:
 script:
   - msbuild /t:Restore
   - msbuild
-  - msbuild /t:Test
+  - msbuild /t:AfterBuild
