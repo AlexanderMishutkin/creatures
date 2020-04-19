@@ -78,5 +78,34 @@
     <Error Condition="!Exists('..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.props'))" />
     <Error Condition="!Exists('..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.targets'))" />
   </Target>
+  <Target Name="AfterBuild">
+
+    <PropertyGroup>
+
+      <!--TestSuccessOrNot is the property specify whether the Test is sucess or not -->
+
+      <TestSuccessOrNot>1</TestSuccessOrNot>
+
+    </PropertyGroup>
+
+    <!--Run MSTest.exe-->
+
+    <Exec Command="$(VS90COMNTOOLS)..\IDE\mstest.exe /testcontainer:TestDLL.dll" >
+
+      <Output TaskParameter="ExitCode" PropertyName="TestSuccessOrNot"/>
+
+    </Exec>
+
+    <!--Condition checks whether the MSTest was executed successfully, if so, deploy your web site-->
+
+    <MSBuild Condition ="'$(TestSuccessOrNot)'=='0'" Projects="BuildDemoSite.csproj"
+
+         Targets="ResolveReferences;_CopyWebApplication"
+
+         Properties="WebProjectOutputDir=$(OutputFolder); 
+
+           OutDir=$(WebProjectOutputDir)\" />
+
+  </Target>
   <Import Project="..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.targets')" />
 </Project>
