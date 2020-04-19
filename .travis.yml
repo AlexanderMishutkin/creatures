@@ -1,7 +1,8 @@
 language: csharp
-mono: none
-dotnet: 3
 solution: Creatures.sln
+mono:
+  - latest
 script:
-  - dotnet restore
-  - dotnet test
+  - msbuild /t:Restore
+  - msbuild
+  - msbuild /t:Test
