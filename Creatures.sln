@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreaturesLibrary.Test", "Cr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreaturesLibrary.Test", "CreaturesLibrary.Test\CreaturesLibrary.Test\CreaturesLibrary.Test.csproj", "{094482DA-13E6-46A7-B0BA-308F6427420E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaturesLibraryStandard", "CreaturesLibraryStandard\CreaturesLibraryStandard.csproj", "{0E73C13C-2ADC-4E78-A75C-9D6CE1CEE937}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreaturesLibrary", "CreaturesLibraryStandard\CreaturesLibrary.csproj", "{0E73C13C-2ADC-4E78-A75C-9D6CE1CEE937}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

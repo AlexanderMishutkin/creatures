@@ -128,7 +128,7 @@ namespace CreatureGenerator
                 creatures.Add(RandomCreature()); //Генерация существ
             }
 
-            Console.WriteLine(string.Join(",", creatures));
+            Console.WriteLine(string.Join(", ", creatures));
             /*creatures.ForEach(Console.WriteLine);*/
 
             SerializeObject(creatures); //Сериализация существ прямо всем списком
