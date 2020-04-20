@@ -10,5 +10,5 @@ script:
   - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test
   - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin
   - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release
-  - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release/netcoreapp2
+  - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release/netcoreapp2.0
   - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release/netcoreapp2.0/CreaturesLibrary.Test.dll
