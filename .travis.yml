@@ -1,14 +1,7 @@
 language: csharp
+mono: none
+dotnet: 2.1.502
 solution: Creatures.sln
-install:
-  - nuget restore Creatures.sln
-  - nuget install xunit.runnner.console -Version 2.1.0 -OutputDirectory testrunner
 script:
-  - msbuild /p:Configuration=Release Creatures.sln
-  - ls /home/travis/build/AlexanderMishutkin/creatures
-  - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test
-  - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test
-  - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin
-  - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release
-  - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release/netcoreapp2.0
-  - mono ./testrunner/xunit.runner.console.2.1.0/tools/xunit.console.exe /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release/netcoreapp2.0/CreaturesLibrary.Test.dll
+  - dotnet restore
+  - dotnet test
