@@ -5,4 +5,4 @@ install:
   - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
 script:
   - msbuild /p:Configuration=Release Creatures.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./CreaturesLibrary.Test/CreaturesLibrary.Test/CreaturesLibrary.Test.csproj
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Debug/netcoreapp2.0/CreaturesLibrary.Test.dll
