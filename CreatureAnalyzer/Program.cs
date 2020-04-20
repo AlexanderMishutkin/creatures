@@ -15,7 +15,7 @@ namespace CreatureAnalyzer
         {
             try
             {
-                using (FileStream fs = new FileStream(Creature.defaultSerializationPath, FileMode.Create))
+                using (FileStream fs = new FileStream(Creature.defaultSerializationPath, FileMode.Open))
                 {
                     using (XmlReader reader = XmlReader.Create(fs))
                     {
@@ -52,9 +52,32 @@ namespace CreatureAnalyzer
 
         static void Main(string[] args)
         {
-            List <Creature> creatures = DeserializeObject<List<Creature>>();
+            List<Creature> creatures = DeserializeObject<List<Creature>>();
 
             creatures.ForEach(Console.WriteLine);
+
+            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("a)");
+
+            Console.WriteLine(creatures
+                .Where(c => c.MovementType == MovementType.Swimming).Count());
+
+            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("b)");
+
+            creatures.OrderBy(c => -c.Health).Take(10).ToList().ForEach(Console.WriteLine);
+
+            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("c)");
+
+            var newCreatures = creatures.GroupBy(c => c.MovementType).ToList()
+                .ConvertAll((group) => group.Aggregate((a, b) => a * b));
+            newCreatures.ForEach(Console.WriteLine);
+            
+            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("d)");
+
+            newCreatures.OrderBy(c => -c.Health).Take(10).ToList().ForEach(Console.WriteLine);
         }
     }
 }
