@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CreaturesLibrary\CreaturesLibrary.csproj">
-      <Project>{99fc47c5-bac1-436c-9725-5dafadcc68d5}</Project>
-      <Name>CreaturesLibrary</Name>
+    <ProjectReference Include="..\CreaturesLibraryStandard\CreaturesLibraryStandard.csproj">
+      <Project>{0e73c13c-2adc-4e78-a75c-9d6ce1cee937}</Project>
+      <Name>CreaturesLibraryStandard</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

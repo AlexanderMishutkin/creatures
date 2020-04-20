@@ -1,8 +1,8 @@
 language: csharp
 solution: Creatures.sln
-mono:
-  - latest
+install:
+  - nuget restore Creatures.sln
+  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
 script:
-  - msbuild /t:Restore
-  - msbuild
-  - msbuild /t:AfterBuild
+  - msbuild /p:Configuration=Release Creatures.sln
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./CreaturesLibrary.Test/CreaturesLibrary.Test/CreaturesLibrary.Test.csproj
