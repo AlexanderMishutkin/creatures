@@ -13,6 +13,11 @@ namespace CreaturesLibrary
     [DataContract]
     public class Creature
     {
+        /// <summary>
+        /// Лучшее место чтобы сохранить своих существ )))
+        /// </summary>
+        public static string defaultSerializationPath = "../../../creatures.xml";
+
         [DataMember]
         private string name;
 
