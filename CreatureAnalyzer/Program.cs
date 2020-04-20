@@ -11,6 +11,11 @@ namespace CreatureAnalyzer
 {
     class Program
     {
+        /// <summary>
+        /// Десериализует объект
+        /// </summary>
+        /// <typeparam name="T">Тип объекта</typeparam>
+        /// <returns>Десириализованный объект</returns>
         static T DeserializeObject<T>()
         {
             try
@@ -78,6 +83,7 @@ namespace CreatureAnalyzer
             Console.WriteLine("d)");
 
             newCreatures.OrderBy(c => -c.Health).Take(10).ToList().ForEach(Console.WriteLine);
+            
         }
     }
 }

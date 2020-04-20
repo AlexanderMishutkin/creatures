@@ -12,12 +12,27 @@ namespace CreatureGenerator
 {
     class Program
     {
+        /// <summary>
+        /// Генератор случайных чисел
+        /// </summary>
         static Random random = new Random();
 
+        /// <summary>
+        /// Минимальное здоровье
+        /// </summary>
         const double minHealth = 0;
+        /// <summary>
+        /// Максимальное здоровье
+        /// </summary>
         const double maxHealth = 10;
 
+        /// <summary>
+        /// Минимальная длина имени
+        /// </summary>
         const int shortName = 6;
+        /// <summary>
+        /// Максимальная длина имени
+        /// </summary>
         const int longName = 10;
 
         /// <summary>
@@ -52,12 +67,21 @@ namespace CreatureGenerator
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Создает случайное сущ-во
+        /// </summary>
+        /// <returns>Случайное существо</returns>
         static Creature RandomCreature()
         {
             return new Creature(RandomName(),
                 (MovementType)random.Next(3), RandomHealth());
         }
 
+        /// <summary>
+        /// Сериализует по контракту в XML объект
+        /// </summary>
+        /// <typeparam name="T">Тип объекта</typeparam>
+        /// <param name="obj">Объект</param>
         static void SerializeObject<T>(T obj)
         {
             try
@@ -101,12 +125,12 @@ namespace CreatureGenerator
 
             for (int i = 0; i < 30; i++)
             {
-                creatures.Add(RandomCreature());
+                creatures.Add(RandomCreature()); //Генерация существ
             }
 
             creatures.ForEach(Console.WriteLine);
 
-            SerializeObject(creatures);
+            SerializeObject(creatures); //Сериализация существ прямо всем списком
         }
     }
 }
