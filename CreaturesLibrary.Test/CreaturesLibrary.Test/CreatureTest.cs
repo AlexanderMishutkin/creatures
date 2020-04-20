@@ -48,7 +48,7 @@ namespace CreaturesLibrary.Test
         {
             Creature c = new Creature("Alexander", MovementType.Walking, 5.555555);
 
-            Assert.Equal("Walking creature Alexander: Health = 5,556", c.ToString());
+            Assert.Equal($"Walking creature Alexander: Health = {5.556}", c.ToString());
         }
 
         [Fact]
