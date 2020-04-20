@@ -2,7 +2,7 @@ language: csharp
 solution: Creatures.sln
 install:
   - nuget restore Creatures.sln
-  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
+  - nuget install xunit.runners -Version 2.0.0 -OutputDirectory testrunner
 script:
   - msbuild /p:Configuration=Release Creatures.sln
   - ls /home/travis/build/AlexanderMishutkin/creatures
@@ -11,6 +11,4 @@ script:
   - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin
   - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release
   - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release/netcoreapp2.0
-  - cp /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release/netcoreapp2.0/CreaturesLibrary.Test.dll /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release/netcoreapp2.0/xunit.dll
-  - ls /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release/netcoreapp2.0
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release/netcoreapp2.0/CreaturesLibrary.Test.dll
+  - mono ./testrunner/xunit.runners.2.0.0/tools/xunit.console.clr4.exe /home/travis/build/AlexanderMishutkin/creatures/CreaturesLibrary.Test/CreaturesLibrary.Test/bin/Release/netcoreapp2.0/CreaturesLibrary.Test.dll
