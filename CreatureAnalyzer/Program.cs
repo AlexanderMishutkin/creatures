@@ -64,17 +64,26 @@ namespace CreatureAnalyzer
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("a)");
 
+            /*
+             Выбираем LINQ запросом сузества с типом передвижения Swimming, считаем их
+             */
             Console.WriteLine(creatures
                 .Where(c => c.MovementType == MovementType.Swimming).Count());
 
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("b)");
 
+            /*
+             Сортируем по отрицательному здоровью (чтобы получить убывание), берем первые десять
+             */
             creatures.OrderBy(c => -c.Health).Take(10).ToList().ForEach(Console.WriteLine);
 
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("c)");
 
+            /*
+             Делим на группы, для каждой группы выполняем агрегацию
+             */
             var newCreatures = creatures.GroupBy(c => c.MovementType).ToList()
                 .ConvertAll((group) => group.Aggregate((a, b) => a * b));
             newCreatures.ForEach(Console.WriteLine);
@@ -82,6 +91,9 @@ namespace CreatureAnalyzer
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("d)");
 
+            /*
+             Сортируем по отрицательному здоровью (чтобы получить убывание), берем первые десять
+             */
             newCreatures.OrderBy(c => -c.Health).Take(10).ToList().ForEach(Console.WriteLine);
             
         }
